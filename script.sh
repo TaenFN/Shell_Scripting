@@ -1,13 +1,19 @@
 #! /bin/bash
-echo "Hello World"
 
-# This is a comment
+echo "Enter names : "
+read name1 name2 name3
+echo "Your names are : $name1, $name2, $name3"
 
-echo $BASH
-echo $BASH_VERSION
-echo $HOME
-echo $PWD
+read -p 'Enter username: ' user_name
+echo "User name is: $user_name"
 
-name=TAEN
-echo $name
-echo Our shell name is $BASH
+read -sp 'Enter password: ' password
+echo "Password is: $password"
+
+echo "Enter names: "
+read -a names
+echo "Names : ${names[0]} ${names[1]}"
+
+echo "Enter name: "
+read
+echo "Name: $REPLY"
