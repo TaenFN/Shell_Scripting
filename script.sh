@@ -1,19 +1,11 @@
 #! /bin/bash
 
-echo "Enter names : "
-read name1 name2 name3
-echo "Your names are : $name1, $name2, $name3"
+echo $0 $1 $2 $3 ' > echo $0 $1 $2 $3 '
 
-read -p 'Enter username: ' user_name
-echo "User name is: $user_name"
+args=("$@")
 
-read -sp 'Enter password: ' password
-echo "Password is: $password"
+echo ${args[0]}, ${args[1]}, ${args[2]}
 
-echo "Enter names: "
-read -a names
-echo "Names : ${names[0]} ${names[1]}"
+echo $@
 
-echo "Enter name: "
-read
-echo "Name: $REPLY"
+echo $#
