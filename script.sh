@@ -1,56 +1,25 @@
 #! /bin/bash
 
-# integer comparison
+echo -e "Enter the name of the file: \c"
+read file_name
 
-# -eq - is equal to - if [ "$a" -eq "$b" ]
-# -ne - is not equal to - if [ "$a" -ne "$b" ]
-# -gt - is greater that - if [ "$a" -gt "$b" ]
-# -ge - is greater that or equal to - if ["$a" -ge "$b"]
-# -lt - is less that - if [ "$a" -lt "$b" ]
-# -le - is less that or equal to - if [ "$a" -le "$b" ]
-# < - is less that - (("$a" < "$b"))
-# <= - is less than or equal to - (("$a" <= "$b"))
-# > - is greater than - (("$a" > "$b" ))
-# >= - is greater than or equal to (("$a" >= "$b"))
+# Check file permission
+# if [ -r $file_name ]
+# if [ -w $file_name ]
+# if [ -x $file_name ]
 
-# string comparision
-# = - is equal to - if [ "$a" = "$b" ]
-# == - is equal to - if [ "$a" == "$b" ]
-# != - is not equal to - if [ "$a" != "$b" ]
-# < - is less than, in ASCII alphabetical order - if [[ "$a" < "$b" ]]
-# > - is greater than, in ASCII alphabetical order - if [[ "$a" > "$b" ]]
-# -z - string is null, that is, has zero lenght
-
-count=10
-
-if [ $count -eq 10 ]
+# if [ -e $file_name ]
+# if [ -f $file_name ]
+# if [ -b $file_name ]
+# if [ -c $file_name ]
+# then
+#     echo "$file_name found"
+# else
+#     echo "$file_name not found"
+# fi
+if [ -s $file_name ]
 then
-    echo "condition is true"
-fi
-
-if (( $count > 9 ))
-then
-    echo "condition is true"
-fi
-
-word=a
-
-if [ $word == "abccc" ]
-then
-    echo "condition is true"
-fi
-
-if [[ $word < "a" ]]
-then
-    echo "condition is true"
-fi
-
-if [[ $word == "b" ]]
-then
-    echo "condition b is true"
-elif [[ $word == "a" ]]
-then
-    echo "condition a is true"
+    echo "$file_name not empty"
 else
-    echo "condition is false"
+    echo "$file_name empty"
 fi
