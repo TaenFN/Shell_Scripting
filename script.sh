@@ -1,17 +1,12 @@
 #! /bin/bash
 
-echo -e "Enter the name of the file: \c"
-read file_name
+age=25
 
-if [ -f $file_name ]
+# if [ "$age" -gt 18  ] && [ "$age" -lt 30 ]
+# if [ "$age" -gt 18  -a "$age" -lt 30 ]
+if [[ "$age" -gt 18  && "$age" -lt 30 ]]
 then
-    if [ -w $file_name ]
-    then
-        echo "Type some text data : To quit press ctrl+d."
-        cat >> $file_name
-    else
-        echo "The file do not have write permissions"
-    fi
+    echo "valid age"
 else
-    echo "$file_name doesn't exist"
+    echo "age not valid"
 fi
