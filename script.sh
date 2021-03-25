@@ -1,17 +1,16 @@
 #! /bin/bash
 
-echo -e "Enter some character: \c"
-read value
+os=('ubuntu' 'windows' 'kali')
+os[3]='mac'
+os[0]='linuxmint'
+unset os[2]
+echo "${os[@]}"
+echo "${os[2]}"
+echo "${!os[@]}"
+echo "${#os[@]}"
 
-case $value in
-    [a-z] )
-        echo "User entered $value a to z";;
-    [A-Z] )
-        echo "User entered $value A to Z";;
-    [0-9] )
-        echo "User entered $value 0 to 9";;
-    ? )
-        echo "User entered $value special character";;
-    * )
-        echo "Unknown input";;
-esac
+string=abcdefghijkl
+echo "${string[@]}"
+echo "${string[0]}"
+echo "${string[1]}"
+echo "${#string[@]}"
