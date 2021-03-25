@@ -1,8 +1,12 @@
-#! /usr/local/bin/bash
+#! /usr/local/bin/bash -x
+set -x
 
 # trap "echo Exit signal is detect" SIGINT SIGKILL SIGSTOP
 
 file=/Users/teanahammed/LearningProjects/Shell_Scripting/file.txt
+
+set +x
+
 trap "rm -f $file && echo file deleted; exit" 0 2 15
 
 echo "pid is $$"
