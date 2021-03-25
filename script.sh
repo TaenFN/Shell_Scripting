@@ -1,16 +1,17 @@
 #! /bin/bash
 
-vehicle=$1
+echo -e "Enter some character: \c"
+read value
 
-case $vehicle in
-    "car" )
-        echo "Rent of $vehicle is 100 dollar";;
-    "van" )
-        echo "Rent of $vehicle is 80 dollar";;
-    "bicycle" )
-        echo "Rent of $vehicle is 10 dollar";;
-    "truck" )
-        echo "Rent of $vehicle is 120 dollar";;
+case $value in
+    [a-z] )
+        echo "User entered $value a to z";;
+    [A-Z] )
+        echo "User entered $value A to Z";;
+    [0-9] )
+        echo "User entered $value 0 to 9";;
+    ? )
+        echo "User entered $value special character";;
     * )
-        echo "Unknown vehicle";;
+        echo "Unknown input";;
 esac
