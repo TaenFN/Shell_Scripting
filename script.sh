@@ -3,10 +3,11 @@
 n=1
 
 # while [ $n -le 10 ]
-while (( $n <= 10 ))
+while [ $n -le 3 ]
 do
     echo "$n"
-    # n=$(( n+1 ))
-    # (( n++ ))
-    (( ++n ))
+    (( n++ ))
+    # gnome-terminal &
+    term &
+    # sleep 1
 done
