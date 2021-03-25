@@ -1,16 +1,22 @@
 #! /usr/local/bin/bash
 
-# for command in ls pwd date
-# do
-#     echo "-------------------$command----------------"
-#     $command
-# done
-
-for item in *
+select name in mark john tom ben
 do
-    # if [ -d $item ]
-    if [ -f $item ]
-    then
-        echo $item
-    fi
+    # echo "$name selected"
+    case $name in
+    mark)
+        echo mark selected
+        ;;
+    john)
+        echo john selected
+        ;;
+    tom)
+        echo tom selected
+        ;;
+    ben)
+        echo ben selected
+        ;;
+    *)
+        echo "Error, please provide the number between 1..4"
+    esac
 done
