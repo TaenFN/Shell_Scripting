@@ -1,13 +1,20 @@
 #! /usr/local/bin/bash
 
-function print() {
-    local name=$1
-    echo "The name is $name"
+usage() {
+    echo "You need to provide an argument: "
+    echo "Usage: $0 file_name"
 }
 
-name="Tom"
-echo "The name is $name: Before"
+is_file_exist() {
+    local file_name="$1"
+    [[ -f "$file_name" ]] && return 0 || return 1
+}
 
-print Max
+[[ $# -eq 0 ]] && usage
 
-echo "The name is $name: After"
+if ( is_file_exist "$1")
+then
+    echo "File found"
+else
+    echo "File not found"
+fi
