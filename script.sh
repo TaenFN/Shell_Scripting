@@ -1,23 +1,16 @@
 #! /usr/local/bin/bash
-echo $BASH_VERSION
-# for loops
 
-# for i in 1 2 3 4 5
+# for command in ls pwd date
 # do
-#     echo $i
+#     echo "-------------------$command----------------"
+#     $command
 # done
 
-# for i in {1..10}
-# do
-#     echo $i
-# done
-
-# for i in {0..10..2}
-# do
-#     echo $i
-# done
-
-for (( i=0; i<5; i++ ))
+for item in *
 do
-    echo $i
+    # if [ -d $item ]
+    if [ -f $item ]
+    then
+        echo $item
+    fi
 done
