@@ -1,22 +1,19 @@
 #! /usr/local/bin/bash
 
-select name in mark john tom ben
+# for (( i=1 ; i<=10 ; i++ ))
+# do
+#     if [ $i -gt 5 ]
+#     then
+#         break
+#     fi
+#     echo "$i"
+# done
+
+for (( i=1 ; i<=10 ; i++ ))
 do
-    # echo "$name selected"
-    case $name in
-    mark)
-        echo mark selected
-        ;;
-    john)
-        echo john selected
-        ;;
-    tom)
-        echo tom selected
-        ;;
-    ben)
-        echo ben selected
-        ;;
-    *)
-        echo "Error, please provide the number between 1..4"
-    esac
+    if [ $i -eq 3 -o $i -eq 6 ]
+    then
+        continue
+    fi
+    echo "$i"
 done
