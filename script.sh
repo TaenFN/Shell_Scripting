@@ -1,21 +1,16 @@
 #! /bin/bash
 
-num1=20.5
-num2=5
+vehicle=$1
 
-echo "20.5+5" | bc
-echo "20.5-5" | bc
-echo "20.5*5" | bc
-echo "scale=2;20.5/5" | bc
-echo "20.5%5" | bc
-
-echo "$num1+$num2" | bc
-echo "$num1-$num2" | bc
-echo "$num1*$num2" | bc
-echo "scale=2;$num1/$num2" | bc
-echo "$num1%$num2" | bc
-
-num=4
-
-echo "scale=2;sqrt($num)" | bc -l
-echo "scale=2;3^3" | bc -l
+case $vehicle in
+    "car" )
+        echo "Rent of $vehicle is 100 dollar";;
+    "van" )
+        echo "Rent of $vehicle is 80 dollar";;
+    "bicycle" )
+        echo "Rent of $vehicle is 10 dollar";;
+    "truck" )
+        echo "Rent of $vehicle is 120 dollar";;
+    * )
+        echo "Unknown vehicle";;
+esac
