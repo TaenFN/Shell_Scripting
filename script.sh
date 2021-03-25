@@ -1,20 +1,22 @@
 #! /usr/local/bin/bash
 
-usage() {
-    echo "You need to provide an argument: "
-    echo "Usage: $0 file_name"
+var=31
+readonly var
+
+var=40
+
+echo "var => $var"
+
+hello() {
+    echo "Hello World"
 }
 
-is_file_exist() {
-    local file_name="$1"
-    [[ -f "$file_name" ]] && return 0 || return 1
+readonly -f hello
+hello() {
+    echo "Hello World Again"
 }
+hello
 
-[[ $# -eq 0 ]] && usage
-
-if ( is_file_exist "$1")
-then
-    echo "File found"
-else
-    echo "File not found"
-fi
+readonly
+readonly -p
+readonly -f
