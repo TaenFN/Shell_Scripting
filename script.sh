@@ -1,16 +1,12 @@
 #! /bin/bash
 
-os=('ubuntu' 'windows' 'kali')
-os[3]='mac'
-os[0]='linuxmint'
-unset os[2]
-echo "${os[@]}"
-echo "${os[2]}"
-echo "${!os[@]}"
-echo "${#os[@]}"
+n=1
 
-string=abcdefghijkl
-echo "${string[@]}"
-echo "${string[0]}"
-echo "${string[1]}"
-echo "${#string[@]}"
+# while [ $n -le 10 ]
+while (( $n <= 10 ))
+do
+    echo "$n"
+    # n=$(( n+1 ))
+    # (( n++ ))
+    (( ++n ))
+done
