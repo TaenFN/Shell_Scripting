@@ -1,13 +1,20 @@
 #! /bin/bash
 
-n=1
+# Input redirection
+# while read p
+# do
+#     echo $p
+# done < script.sh
 
-# while [ $n -le 10 ]
-while [ $n -le 3 ]
+# Read file contents into one variable then print it.
+# cat script.sh | while read p
+# do
+#     echo $p
+# done
+
+# IFS = Internal Field Separator
+# while IFS= read -r line
+while IFS=' ' read -r line
 do
-    echo "$n"
-    (( n++ ))
-    # gnome-terminal &
-    term &
-    # sleep 1
-done
+    echo $line
+done < script.sh
