@@ -1,12 +1,16 @@
 #! /bin/bash
 
-age=63
+num1=20
+num2=5
 
-# if [ "$age" -eq 18  ] || [ "$age" -lt 30 ]
-# if [ "$age" -eq 18  -o "$age" -lt 30 ]
-if [[ "$age" -eq 18  || "$age" -lt 30 ]]
-then
-    echo "valid age"
-else
-    echo "age not valid"
-fi
+echo $(( num1 + num2 ))
+echo $(( num1 - num2 ))
+echo $(( num1 * num2 ))
+echo $(( num1 / num2 ))
+echo $(( num1 % num2 ))
+
+echo $(expr $num1 + $num2 )
+echo $(expr $num1 - $num2 )
+echo $(expr $num1 \* $num2 )
+echo $(expr $num1 / $num2 )
+echo $(expr $num1 % $num2 )
