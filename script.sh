@@ -1,14 +1,13 @@
 #! /usr/local/bin/bash
 
-function Hello() {
-    echo "Hello $1"
+function print() {
+    local name=$1
+    echo "The name is $name"
 }
 
-quit () {
-    exit
-}
+name="Tom"
+echo "The name is $name: Before"
 
-Hello "Taen Ahammed"
-quit
+print Max
 
-echo "foo"
+echo "The name is $name: After"
